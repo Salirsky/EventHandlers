@@ -3,6 +3,7 @@
 const btn = document.getElementById("btn");
 const text = document.getElementById("text");
 const square = document.getElementById("square");
+const eBtn = document.getElementById("e_btn");
 
 const colorChange = function (event) {
   square.style.backgroundColor = event.target.value;
@@ -15,3 +16,5 @@ btn.addEventListener("click", function () {
   text.addEventListener("input", colorChange);
 });
 // В таком виде цвет меняется, только если кнопка уже была кликнута, причём цвет меняется как только его ввели, независимо от нажатия кнопки. Если кнопка кликнута не была, цвет не изменится, пока на неё не нажать.
+
+eBtn.style.display = "none";
