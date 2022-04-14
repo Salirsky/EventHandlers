@@ -8,17 +8,26 @@ const range = document.getElementById("range");
 const rangeSpan = document.getElementById("range-span");
 const circle = document.getElementById("circle");
 
-const colorChange = function (event) {
-  square.style.backgroundColor = event.target.value;
+const colorChange = function (color) {
+  square.style.backgroundColor = color;
 };
 
-//text.addEventListener("input", colorChange);
+const btnLogger = function () {
+  colorChange(color);
+};
 
-btn.addEventListener("click", function () {
-  console.log("Клик по кнопке");
-  text.addEventListener("input", colorChange);
-});
-// В таком виде цвет меняется, только если кнопка уже была кликнута, причём цвет меняется как только его ввели, независимо от нажатия кнопки. Если кнопка кликнута не была, цвет не изменится, пока на неё не нажать.
+const takeText = function (event) {
+  color = event.target.value;
+};
+
+let color;
+
+btn.addEventListener("click", btnLogger);
+
+text.addEventListener("input", takeText);
+
+//colors: #6949D7  #9D3ED5 #DB0058 #007730 #00B74A #FF3100
+// #7109AA #3914AF #CD0074 #9FEE00
 
 eBtn.style.display = "none";
 
